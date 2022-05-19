@@ -33,6 +33,31 @@ html, body {
 svg path {
     transition: all .2s ease;
 }
-svg path[stroke="#333"][stroke-opacity="1"][stroke-width="1"][stroke-dasharray="0"][fill-opacity="0.25"]:hover {
+svg path[stroke="#333"][stroke-opacity="1"][stroke-width="1"][stroke-dasharray="0"][fill-opacity="0.2"]:hover {
     fill : rgba(255,255,255,.7);
 }
+
+/* labels */
+.leaflet-tooltip.country-name {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+.leaflet-tooltip.country-name.leaflet-tooltip-top::before,
+.leaflet-tooltip.country-name.leaflet-tooltip-bottom::before,
+.leaflet-tooltip.country-name.leaflet-tooltip-left::before,
+.leaflet-tooltip.country-name.leaflet-tooltip-right::before { border: none; }
+.leaflet-tooltip.city-name {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 1em;
+}
+.leaflet-tooltip.city-name.leaflet-tooltip-top::before,
+.leaflet-tooltip.city-name.leaflet-tooltip-bottom::before,
+.leaflet-tooltip.city-name.leaflet-tooltip-left::before,
+.leaflet-tooltip.city-name.leaflet-tooltip-right::before { border: none; }
