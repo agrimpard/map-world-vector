@@ -15,7 +15,7 @@ The objective is to try to reproduce a map that I like very much consultable on 
 
 Here is the rendering I get for the moment !
 
-[map-screenshot]
+[[My map][map-screenshot]]
 
 ## License
 
