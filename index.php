@@ -204,7 +204,7 @@
 		L.control.scale().addTo(map);
 
 		// ville
-		var m_city = new L.Marker([48.8589466,2.2769956], { icon: icon_city, pane: 'l_0' }).bindTooltip('Paris', { pane: 'l_0', permanent: true, className: 'city-name', direction : 'top' }).addTo(map);
+		var m_city = new L.Marker([48.8589466,2.2769956], { icon: icon_city, pane: 'l_0' }).bindTooltip('Paris', { pane: 'l_0', permanent: true, className: 'city-name', direction : 'right' }).addTo(map);
 
 		// pays
 		var m_country = new L.marker([46.7511877,2.4738183], { icon: icon_country, opacity: 0 }).bindTooltip('France', { pane: 'l_0', permanent: true, className: 'country-name', direction : 'center' }).addTo(map);
