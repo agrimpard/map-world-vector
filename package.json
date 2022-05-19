@@ -1,0 +1,20 @@
+{
+  "name": "map-world-vector",
+  "version": "2022.05.19",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agrimpard/map-world-vector"
+  },
+  "bugs" : {
+    "url" : "https://github.com/agrimpard/map-world-vector/issues",
+    "email" : "aurelien@grimpard.net"
+  },
+  "devDependencies": {
+    "jquery":"3.6.0",
+	"leaflet":"1.7.1",
+	"leaflet.fullscreen":"2.0.0"
+  },
+  "author": "Aurélien Grimpard <aurelien@grimpard.net (https://aurelien.grimpard.net)",
+  "license": "CC BY-NC-SA 4.0",
+  "readmeFilename": "README.md"
+}
