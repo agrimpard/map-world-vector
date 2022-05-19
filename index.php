@@ -54,7 +54,7 @@
 			minZoom: map_zmin,
 			maxZoom: map_zmax,
 			tileSize: 256,
-			attribution: 'ArcGis Hillshade',
+			attribution: '&copy <a href="https://www.arcgis.com">ArcGis</a>',
 			noWrap: true,
 			className: 'tiles-base'
 		})
@@ -82,7 +82,7 @@
 			opacity: 1,
 			color: '#333',
 			dashArray: '0',
-			fillOpacity: .3
+			fillOpacity: .2
 		};
 	}
 	function geo_frontieres() {
@@ -104,7 +104,7 @@
 	function geo_water() {
 		return {
 			fillColor: '#FFF',
-			fillOpacity: .2,
+			fillOpacity: .3,
 			opacity: 0
 		};
 	}
@@ -118,7 +118,7 @@
 	function geo_graticules() {
 		return {
 			weight: 2,
-			opacity: .5,
+			opacity: .1,
 			color: '#A3BCC7',
 			dashArray: '0',
 			fillOpacity: 0
@@ -126,7 +126,7 @@
 	}
 
 
-	function load_geojson() {
+	function map_load() {
 		$.getJSON('geojson/ne_10m_bathymetry_L_0.json',function(data){ geojson_b_0 = L.geoJson(data, {style: geo_water_0, pane: 'b_0'}).addTo(map); });
 		$.getJSON('geojson/ne_10m_bathymetry_K_200.json',function(data){ geojson_b_200 = L.geoJson(data, {style: geo_water, pane: 'b_1'}).addTo(map); });
 		$.getJSON('geojson/ne_10m_bathymetry_J_1000.json',function(data){ geojson_b_1000 = L.geoJson(data, {style: geo_water, pane: 'b_2'}).addTo(map); });
@@ -145,32 +145,24 @@
 		//$.getJSON('geojson/ne_10m_time_zones.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_graticules, pane: 'g_0'}).addTo(map); });
 		$.getJSON('geojson/ne_10m_admin_0_boundary_lines_land.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_frontieres, pane: 'c_0'}).addTo(map); });
 		$.getJSON('geojson/ne_10m_admin_0_countries.json',function(data){ geojson_pays = L.geoJson(data, {style: geo_countries, pane: 'c_1'}).addTo(map); });
+		L.control.scale().addTo(map);
 	}
-	load_geojson();
+	map_load();
 
-	function load_debug() {
-		$('.geo-debug').html('<b>Zoom</b> : '+map.getZoom()+' | <b>Zoom prev</b> = '+window.zoom_prev+'<br><button class="bt-toggle-overlay">Overlay</button>');
+	function debug_load() {
+		$('.geo-debug').html('<b>Zoom</b> : '+map.getZoom()+' | <b>Zoom prev</b> = '+window.zoom_prev);
 	}
-	load_debug();
+	debug_load();
 
 	map.on('zoomend', function() {
 		// zoom in / zoom out
 		if ( ( window.zoom_prev == 3 && map.getZoom() == 4 ) || ( window.zoom_prev == 4 && map.getZoom() == 3 ) ) {
 			geojson_pays.removeFrom(map);
 			geojson_frontiere.removeFrom(map);
-			load_geojson();
+			map_load();
 		}
-		load_debug()
+		debug_load()
 		window.zoom_prev = map.getZoom();
-	});
-
-
-	$('body').on('click', '.bt-toggle-overlay', function(){
-		if( $('.leaflet-layer.tiles-overlay').hasClass('op-0') ) {
-			$('.leaflet-layer.tiles-overlay').removeClass('op-0');
-		} else {
-			$('.leaflet-layer.tiles-overlay').addClass('op-0');
-		}
 	});
 
 

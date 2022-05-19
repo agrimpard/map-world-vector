@@ -26,7 +26,6 @@ html, body {
 }
 
 /* tiles */
-.op-0 { opacity: 0 !important; }
 .leaflet-layer.tiles-overlay { z-index: 401 !important; } /* overlay labels top */
 /*.leaflet-tile-pane { filter: hue-rotate(45deg); } /* correction visuelle de l'eau */
 
