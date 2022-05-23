@@ -15,7 +15,7 @@ The final work should be as close as possible to the ArcGIS model and provide al
 
 A fully functional example will also be available.
 
-##Limitations
+## Limitations
 
 ArcGIS seems to use "tiled" vectorized files for the limits of countries, their borders, the depths of seas and oceans, which makes the display much less heavy and therefore much more fluid.
 
