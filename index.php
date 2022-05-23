@@ -6,6 +6,7 @@
 	# convertion shape / geojson : https://mapshaper.org
 	# labels : https://github.com/mledoze/countries
 	# test tiles : https://mc.bbbike.org/mc/?num=2&mt0=mapnik&mt1=hillshading
+	# country list + translations : https://github.com/stefangabos/world_countries/tree/master/data/countries/_combined
 
 	# Todo
 	- geojson : pays labels / pays capitales / océans / mers
@@ -58,6 +59,7 @@
 		map_bounds = L.latLngBounds(map_sw,map_ne),
 		//tiles_base = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
 		tiles_base = L.tileLayer('http://localhost/dev/map-vector/arcgis-shade/{z}/{x}-{y}.jpg', {
+		//tiles_base = L.tileLayer('https://worldtiles2.waze.com/tiles/{z}/{x}/{y}.png', {
 			minZoom: map_zmin,
 			maxZoom: map_zmax,
 			tileSize: 256,
@@ -77,7 +79,7 @@
 			html: '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-record-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>',
 			className: 'icon-city',
 			iconSize: [10, 10],
-			iconAnchor:   [0, 0],
+			iconAnchor:   [3, 8],
 			popupAnchor:  [0, 0]
 		}),
 		zoom_now = map.getZoom(),
@@ -186,24 +188,27 @@
 
 
 	function map_load() {
-		$.getJSON('geojson/ne_10m_bathymetry_L_0.json',function(data){ geojson_b_0 = L.geoJson(data, {style: geo_water_0, pane: 'b_0', interactive: false}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_K_200.json',function(data){ geojson_b_200 = L.geoJson(data, {style: geo_water, pane: 'b_1', interactive: false}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_J_1000.json',function(data){ geojson_b_1000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
-		/*
-		$.getJSON('geojson/ne_10m_bathymetry_I_2000.json',function(data){ geojson_b_2000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_H_3000.json',function(data){ geojson_b_3000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_G_4000.json',function(data){ geojson_b_4000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_F_5000.json',function(data){ geojson_b_5000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_E_6000.json',function(data){ geojson_b_6000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_D_7000.json',function(data){ geojson_b_7000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_C_8000.json',function(data){ geojson_b_8000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_B_9000.json',function(data){ geojson_b_9000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_A_10000.json',function(data){ geojson_b_10000 = L.geoJson(data, {style: geo_water}).addTo(map); });
-		*/
+		$.getJSON('geojson/ne_10m_bathymetry_L_0_sm.json',function(data){ geojson_b_0 = L.geoJson(data, {style: geo_water_0, pane: 'b_0', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_K_200_sm.json',function(data){ geojson_b_200 = L.geoJson(data, {style: geo_water, pane: 'b_1', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_J_1000_sm.json',function(data){ geojson_b_1000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		/**/
+		$.getJSON('geojson/ne_10m_bathymetry_I_2000_sm.json',function(data){ geojson_b_2000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_H_3000_sm.json',function(data){ geojson_b_3000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_G_4000_sm.json',function(data){ geojson_b_4000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_F_5000_sm.json',function(data){ geojson_b_5000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_E_6000_sm.json',function(data){ geojson_b_6000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_D_7000_sm.json',function(data){ geojson_b_7000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_C_8000_sm.json',function(data){ geojson_b_8000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_B_9000_sm.json',function(data){ geojson_b_9000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_A_10000_sm.json',function(data){ geojson_b_10000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
+		/**/
 		$.getJSON('geojson/ne_10m_graticules_10.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_graticules, pane: 'g_0', interactive: false}).addTo(map); });
-		//$.getJSON('geojson/ne_10m_time_zones.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_graticules, pane: 'g_0'}).addTo(map); });
-		$.getJSON('geojson/ne_10m_admin_0_boundary_lines_land.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_frontieres, pane: 'c_0', interactive: false}).addTo(map); });
-		$.getJSON('geojson/ne_10m_admin_0_countries.json',function(data){ geojson_pays = L.geoJson(data, {style: geo_countries, pane: 'c_1'}).addTo(map); });
+		// 10m
+		//$.getJSON('geojson/ne_10m_admin_0_boundary_lines_land.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_frontieres, pane: 'c_0', interactive: false}).addTo(map); });
+		//$.getJSON('geojson/ne_10m_admin_0_countries.json',function(data){ geojson_pays = L.geoJson(data, {style: geo_countries, pane: 'c_1'}).addTo(map); });
+		// 50m
+		$.getJSON('geojson/ne_50m_admin_0_boundary_lines_land.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_frontieres, pane: 'c_0', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_50m_admin_0_countries.json',function(data){ geojson_pays = L.geoJson(data, {style: geo_countries, pane: 'c_1'}).addTo(map); });
 		L.control.scale().addTo(map);
 
 		// ville

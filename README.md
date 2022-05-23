@@ -11,6 +11,10 @@ The objective is to try to reproduce a map that I like very much consultable on 
 
 [![ArcGIS map][arcgis-screenshot]](https://www.arcgis.com/apps/mapviewer/)
 
+The final work should be as close as possible to the ArcGIS model and provide all necessary open source tools. A database (json) with the names of the countries and their respective capitals and all the data to display this information on the map will be available.
+
+A fully functional example will also be available.
+
 ## Result
 
 Here is the rendering I get for the moment !
