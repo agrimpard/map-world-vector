@@ -46,6 +46,7 @@ svg path[stroke="#333"][stroke-opacity="1"][stroke-width="1"][stroke-dasharray="
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .2em;
+    text-shadow: -1px -1px 0 #ECEBEB, 1px -1px 0 #ECEBEB, -1px 1px 0 #ECEBEB, 1px 1px 0 #ECEBEB;
 }
 .leaflet-tooltip.country-name.leaflet-tooltip-top::before,
 .leaflet-tooltip.country-name.leaflet-tooltip-bottom::before,
@@ -56,6 +57,10 @@ svg path[stroke="#333"][stroke-opacity="1"][stroke-width="1"][stroke-dasharray="
     border: none;
     box-shadow: none;
     font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    text-shadow: -1px -1px 0 #ECEBEB, 1px -1px 0 #ECEBEB, -1px 1px 0 #ECEBEB, 1px 1px 0 #ECEBEB;
+
 }
 .leaflet-tooltip.city-name.leaflet-tooltip-top::before,
 .leaflet-tooltip.city-name.leaflet-tooltip-bottom::before,

@@ -10,6 +10,8 @@
 	# Todo
 	- geojson : pays labels / pays capitales / océans / mers
 	- Leaflet 1.7.x >>> Leaflet 1.8.x
+	- pays font : https://www.fontsquirrel.com/fonts/montserrat
+	- ville font : https://www.fontsquirrel.com/fonts/roboto
 
 */
 ?>
@@ -184,9 +186,9 @@
 
 
 	function map_load() {
-		$.getJSON('geojson/ne_10m_bathymetry_L_0.json',function(data){ geojson_b_0 = L.geoJson(data, {style: geo_water_0, pane: 'b_0'}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_K_200.json',function(data){ geojson_b_200 = L.geoJson(data, {style: geo_water, pane: 'b_1'}).addTo(map); });
-		$.getJSON('geojson/ne_10m_bathymetry_J_1000.json',function(data){ geojson_b_1000 = L.geoJson(data, {style: geo_water, pane: 'b_2'}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_L_0.json',function(data){ geojson_b_0 = L.geoJson(data, {style: geo_water_0, pane: 'b_0', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_K_200.json',function(data){ geojson_b_200 = L.geoJson(data, {style: geo_water, pane: 'b_1', interactive: false}).addTo(map); });
+		$.getJSON('geojson/ne_10m_bathymetry_J_1000.json',function(data){ geojson_b_1000 = L.geoJson(data, {style: geo_water, pane: 'b_2', interactive: false}).addTo(map); });
 		/*
 		$.getJSON('geojson/ne_10m_bathymetry_I_2000.json',function(data){ geojson_b_2000 = L.geoJson(data, {style: geo_water}).addTo(map); });
 		$.getJSON('geojson/ne_10m_bathymetry_H_3000.json',function(data){ geojson_b_3000 = L.geoJson(data, {style: geo_water}).addTo(map); });
@@ -198,9 +200,9 @@
 		$.getJSON('geojson/ne_10m_bathymetry_B_9000.json',function(data){ geojson_b_9000 = L.geoJson(data, {style: geo_water}).addTo(map); });
 		$.getJSON('geojson/ne_10m_bathymetry_A_10000.json',function(data){ geojson_b_10000 = L.geoJson(data, {style: geo_water}).addTo(map); });
 		*/
-		$.getJSON('geojson/ne_10m_graticules_10.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_graticules, pane: 'g_0'}).addTo(map); });
+		$.getJSON('geojson/ne_10m_graticules_10.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_graticules, pane: 'g_0', interactive: false}).addTo(map); });
 		//$.getJSON('geojson/ne_10m_time_zones.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_graticules, pane: 'g_0'}).addTo(map); });
-		$.getJSON('geojson/ne_10m_admin_0_boundary_lines_land.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_frontieres, pane: 'c_0'}).addTo(map); });
+		$.getJSON('geojson/ne_10m_admin_0_boundary_lines_land.json',function(data){ geojson_frontiere = L.geoJson(data, {style: geo_frontieres, pane: 'c_0', interactive: false}).addTo(map); });
 		$.getJSON('geojson/ne_10m_admin_0_countries.json',function(data){ geojson_pays = L.geoJson(data, {style: geo_countries, pane: 'c_1'}).addTo(map); });
 		L.control.scale().addTo(map);
 
@@ -208,7 +210,7 @@
 		cities.forEach(function(obj) {
 			var m_city = new L.Marker(obj.coords, { icon: icon_city, pane: 'l_0' }).bindTooltip(obj.label, { pane: 'l_0', permanent: true, className: 'city-name', direction : 'right' }).addTo(map);
 		});
-		
+
 		// pays
 		var m_country = new L.marker([46.7511877,2.4738183], { icon: icon_country, opacity: 0 }).bindTooltip('France', { pane: 'l_0', permanent: true, className: 'country-name', direction : 'center' }).addTo(map);
 
