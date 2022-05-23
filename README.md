@@ -1,6 +1,19 @@
 [![CC BY-NC-SA 4.0][license-shield]][license-url]
 
-## World map vector
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#the-project">The project</a></li>
+    <li><a href="#goal">Goal</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#limitations">Limitations</a></li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</details>
+
+## The project
 
 This world map is a combination of classic tiles with vector overlays (SVG) based on Leaflet.
 The objective is to display an interactive map, in color, as simply as possible, as aesthetically as possible, with open source content.
@@ -15,13 +28,31 @@ The final work should be as close as possible to the ArcGIS model and provide al
 
 A fully functional example will also be available.
 
+## Roadmap
+
+- [x] Base map with leaflet 1.7.x and ArcGis tiles
+- [x] Add geojson : countries limits, countries boundaries, bathymetry, latlon grid
+- [x] CSS : countries limits, countries boundaries, bathymetry, latlon grid
+- [ ] Database countries
+- [ ] Database cities
+- [ ] Database oceans/seas
+- [ ] Add labels for : countries, countries's capitals, oceans and seas
+- [ ] CSS : countries names, cities names, oceans names
+- [ ] Add custom font for : countries names (Montserrat), cities names (Roboto), oceans names (Arial)
+- [ ] One color per country and random color
+- [ ] Multi-language Support
+    - [ ] English
+    - [ ] French
+- [ ] Update leaflet 1.7.x to 1.8.x
+- [ ] Provide all sources
+
 ## Limitations
 
 ArcGIS seems to use "tiled" vectorized files for the limits of countries, their borders, the depths of seas and oceans, which makes the display much less heavy and therefore much more fluid.
 
 The geojson files I have are global and therefore relatively heavy, I do not have the skills to cut these files into tiles.
 
-Also, ArcGIS seems to have a tiled background map (which I don't have) with transparency. This allows for a pretty cool effect, the grids (longitude/latitude) fade under the land masses.
+Also, ArcGIS seems to have a tiled background map with transparency (which I don't have). This allows for a pretty cool effect, the grids (longitude/latitude) fade under the land masses.
 
 ## Result
 
@@ -40,3 +71,7 @@ Here is the rendering I get for the moment !
 [license-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=for-the-badge
 [arcgis-screenshot]: map-arcgis.png
 [map-screenshot]: map.png
+
+## Sources
+
+ASAP !

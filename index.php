@@ -8,12 +8,6 @@
 	# test tiles : https://mc.bbbike.org/mc/?num=2&mt0=mapnik&mt1=hillshading
 	# country list + translations : https://github.com/stefangabos/world_countries/tree/master/data/countries/_combined
 
-	# Todo
-	- geojson : pays labels / pays capitales / océans / mers
-	- Leaflet 1.7.x >>> Leaflet 1.8.x
-	- pays font : https://www.fontsquirrel.com/fonts/montserrat
-	- ville font : https://www.fontsquirrel.com/fonts/roboto
-
 */
 ?>
 <!DOCTYPE HTML>
