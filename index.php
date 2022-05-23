@@ -62,7 +62,7 @@
 			attribution: '&copy <a href="https://www.arcgis.com">ArcGis</a>',
 			noWrap: true,
 			className: 'tiles-base'
-		})
+		}),
 		map = L.map('carte', {
 			center: map_center,
 			maxBounds: map_bounds,
@@ -128,6 +128,7 @@
 			label:'Londres',
 		},
 	];
+
 
 	// style
 	function geo_countries() {
@@ -204,34 +205,12 @@
 		L.control.scale().addTo(map);
 
 		// ville
-		var m_city = new L.Marker([48.8589466,2.2769956], { icon: icon_city, pane: 'l_0' }).bindTooltip('Paris', { pane: 'l_0', permanent: true, className: 'city-name', direction : 'right' }).addTo(map);
-
+		cities.forEach(function(obj) {
+			var m_city = new L.Marker(obj.coords, { icon: icon_city, pane: 'l_0' }).bindTooltip(obj.label, { pane: 'l_0', permanent: true, className: 'city-name', direction : 'right' }).addTo(map);
+		});
+		
 		// pays
 		var m_country = new L.marker([46.7511877,2.4738183], { icon: icon_country, opacity: 0 }).bindTooltip('France', { pane: 'l_0', permanent: true, className: 'country-name', direction : 'center' }).addTo(map);
-/*
-			coords:[48.8589466,2.2769956],
-			country:'France',
-			label:'Paris',
-
-var marker = L.marker(props.coords, {icon: myIcon}).bindTooltip(props.country, {permanent: true, direction : 'bottom'}).addTo(mymap);
-}
-
-// Edit marker icons
-var icon_cities = L.icon({
-    iconUrl: '',
-    iconSize: [10, 10]
-});
-
-// Loop through markers
-for(var i = 0; i<markers.length; i++){
-    addMarker(markers[i]);
-}
-// To add the marker coordinates
-function addMarker(props){
-    var marker = L.marker(props.coords, {icon: icon_cities}).bindTooltip(props.country, {permanent: true, direction : 'bottom'}).addTo(map);
-}
-*/
-
 
 	}
 	map_load();
