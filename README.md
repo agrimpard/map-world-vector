@@ -15,6 +15,12 @@ The final work should be as close as possible to the ArcGIS model and provide al
 
 A fully functional example will also be available.
 
+##Limitations
+
+ArcGIS seems to use "tiled" vectorized files for the limits of countries, their borders, the depths of seas and oceans, which makes the display much less heavy and therefore much more fluid.
+
+The geojson files I have are global and therefore relatively heavy, I do not have the skills to cut these files into tiles.
+
 ## Result
 
 Here is the rendering I get for the moment !
