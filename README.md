@@ -21,6 +21,8 @@ ArcGIS seems to use "tiled" vectorized files for the limits of countries, their 
 
 The geojson files I have are global and therefore relatively heavy, I do not have the skills to cut these files into tiles.
 
+Also, ArcGIS seems to have a tiled background map (which I don't have) with transparency. This allows for a pretty cool effect, the grids (longitude/latitude) fade under the land masses.
+
 ## Result
 
 Here is the rendering I get for the moment !
