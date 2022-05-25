@@ -48,6 +48,7 @@ A fully functional example will also be available.
     - [ ] English
     - [ ] French
 - [ ] Update leaflet 1.7.x to 1.8.x
+- [ ] 3 levels precision : light, normal, full
 - [ ] Provide all sources
 
 ## Limitations
