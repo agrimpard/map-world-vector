@@ -38,8 +38,10 @@ A fully functional example will also be available.
 - [ ] Database countries
 - [ ] Database cities
 - [ ] Database oceans/seas
-- [ ] Add labels for : countries, countries's capitals, oceans and seas
-- [ ] CSS : countries names, cities names, oceans names
+- [ ] Add labels for : countries and countries's capitals
+- [ ] CSS : countries and cities names
+- [ ] Add labels for : oceans and seas
+- [ ] CSS : oceans names
 - [ ] Add custom font for : countries names (Montserrat), cities names (Roboto), oceans names (Arial)
 - [ ] One color per country and random color
 - [ ] Multi-language Support
