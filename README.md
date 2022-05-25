@@ -35,11 +35,10 @@ A fully functional example will also be available.
 - [x] Base map with leaflet 1.7.x and ArcGis tiles
 - [x] Add geojson : countries limits, countries boundaries, bathymetry, latlon grid
 - [x] CSS : countries limits, countries boundaries, bathymetry, latlon grid
-- [ ] Database countries
-- [ ] Database cities
+- [ ] Database countries and capitals cities
+- [ ] Add labels for : countries and capitals cities
+- [ ] CSS : countries and capitals cities
 - [ ] Database oceans/seas
-- [ ] Add labels for : countries and countries's capitals
-- [ ] CSS : countries and cities names
 - [ ] Add labels for : oceans and seas
 - [ ] CSS : oceans names
 - [ ] Add custom font for : countries names (Montserrat), cities names (Roboto), oceans names (Arial)
