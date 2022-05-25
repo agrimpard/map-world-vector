@@ -41,6 +41,7 @@ A fully functional example will also be available.
 - [ ] Database oceans/seas
 - [ ] Add labels for : oceans and seas
 - [ ] CSS : oceans names
+- [ ] Zoom based labels display
 - [ ] Add custom font for : countries names (Montserrat), cities names (Roboto), oceans names (Arial)
 - [ ] One color per country and random color
 - [ ] Multi-language Support
